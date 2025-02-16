@@ -54,10 +54,10 @@ async def pozdravit_s_pochinami(inline_query):
     if len(inline_query.query) > 1:
         textr += f'''{querysplit[0]}, '''
 
-    chance = random.choice([True, False])
-    if chance == True:
+    chance = random.randint(0, 100)
+    if chance > 65:
         textr += f'''@{inline_query.from_user.username} треснул вам по ушам, с Починами!\n'''
-    elif chance == False:
+    elif chance <= 65:
         textr += f'''@{inline_query.from_user.username} хотел треснуть вам по ушам, но к счатью вы среагировали и отбили удар!\n'''
 
     if len(querysplit) >= 2:
